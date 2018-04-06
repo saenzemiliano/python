@@ -12,7 +12,7 @@ class Musician(models.Model):
         return '%d: %s' % (self.first_name, self.last_name)
 
 class Album(models.Model):
-    artist = models.ForeignKey(Musician, on_delete=models.CASCADE)
+    artist = models.ForeignKey(Musician, related_name='albums', on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     release_date = models.DateField()
     num_stars = models.IntegerField()
