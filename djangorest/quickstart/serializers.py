@@ -18,7 +18,7 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
 class TrackSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Track
-        fields = ('id', 'album', 'order', 'title', 'duration')
+        fields = ('id', 'order', 'title', 'duration')
 
 
 class AlbumSerializer(serializers.HyperlinkedModelSerializer):
@@ -26,12 +26,12 @@ class AlbumSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Album
-        fields = ('id', 'name', 'artist', 'release_date', 'num_stars', 'tracks')
+        fields = ('id', 'name', 'release_date', 'num_stars', 'tracks')
 
 
 class MusicianSerializer(serializers.HyperlinkedModelSerializer):
     albums = AlbumSerializer(many=True, read_only=True)
 
     class Meta:
-        model = Track
+        model = Musician
         fields = ('id', 'first_name', 'last_name', 'instrument', 'albums')
