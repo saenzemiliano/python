@@ -10,7 +10,7 @@ class PetStatus(Enum):
 class Pet(object):
     def __init__(self, name):
         self.name = name
-        self.hair = 10
+        self.hair = 100
         self.hungry = 100
         self.state = PetStatus.GOOD
 
@@ -20,8 +20,14 @@ class Pet(object):
     def weight(self):
         pass
 
+    def feed(self):
+        self.hungry = self.hungry + 10 
+
+    def cutHair(self):
+        self.hair = self.hair - 10
+
 
     def __str__(self):
-        return self.name + ' ' + '[' + str(self.state.name) + ']'
+        return  '[Name: ' + self.name + ', State: ' + str(self.state.name) + ', Hair: ' + str(self.hair) + ', Hungry: ' + str(self.hungry) + ']'
     def __unicode__(self):
         return '%d' % (self.name)

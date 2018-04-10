@@ -11,7 +11,7 @@ def person_create(name, email):
 
 
 def person_find_by_name(name):
-    pass
+    return PetManager().find(name)
 
 def person_find_by_email(email):
     pass

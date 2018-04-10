@@ -10,20 +10,22 @@ def pet_create(name):
 
 
 def pet_find_by_name(name):
-    pass
+    return PetManager().find(name)
 
 def pet_remove_by_name(name):
     pass
 
-def pet_add(namePet):
+def pet_add(name):
     pass
 
-def pet_cut_hair():
-    pass
+def pet_cut_hair(name):
+    pet = pet_find_by_name(name)
+    pet.cutHair()
 
 
-def pet_feed():
-    pass
+def pet_feed(name):
+    pet = pet_find_by_name(name)
+    pet.feed()
 
 
 def pet_list():

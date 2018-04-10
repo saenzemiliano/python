@@ -3,7 +3,7 @@ import sys
 from src.common.calculator import calculator
 from src.xutils.xutils import sum_n, sum_n_smart
 from src.controller.person_controller import person_list, person_create
-from src.controller.pet_controller import pet_list, pet_create
+from src.controller.pet_controller import pet_list, pet_create, pet_feed, pet_cut_hair
 
 
 
@@ -60,9 +60,11 @@ while exit:
                 elif oper == 9:
                     pass
                 elif oper == 10:
-                    pass
+                    name = input('Pet ? ')
+                    pet_cut_hair(name)
                 elif oper == 11:
-                    pass
+                    name = input('Pet ? ')
+                    pet_feed(name)
                 else:
                     pass
     except Exception as e:

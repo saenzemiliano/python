@@ -18,6 +18,13 @@ class PetManager(object):
                 if pet_.name == pet.name:
                     return True
             return False
+
+        def  find(self, name):
+            for pet_ in self.pets:
+                if pet_.name == name:
+                    return pet_
+            raise BusinessError('ERROR: Pet is not exists '+ '[Name: ' + name + ']'  )
+        
     
     instance = None
 
